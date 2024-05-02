@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral Project - Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        header, footer { background-color: #f4f4f4; padding: 10px; text-align: center; }
+        .container { width: 80%; margin: auto; overflow: hidden; }
+        #filters { margin-top: 20px; }
+        select { margin: 10px; }
+        .product { float: left; width: 23%; margin: 1%; padding: 10px; text-align: center; }
+        .product img { width: 100%; height: auto; }
+        .basket { float: right; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Floral Project Logo" style="float: left;">
+        <a href="basket.html" style="text-decoration: none; color: inherit;">
+            <div class="basket">
+                <img src="basket.png" alt="Basket" />
+                <span id="basket-count">0</span> Items
+            </div>
+        </a>
+        <div>
+            <a href="#">Track Order</a> | 
+            <a href="#">Help</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="main-banner">
+            
+            <h1>Send Her Blooms - Shop All Mother's Day Flowers and Gifts!</h1>
+        </div>
+
+        <div id="filters">
+            <!-- Dropdown filters -->
+            <select id="flower-type">
+                <option value="mixed">Mixed</option>
+                <option value="roses">Roses</option>
+                <option value="lilies">Lilies</option>
+                <option value="tulips">Tulips</option>
+                <option value="daisies">Daisies</option>
+            </select>
+            <select id="occasion">
+                <option value="mother's day">Mother's Day</option>
+                <option value="birthday">Birthday</option>
+                <option value="thank you">Thank You</option>
+            </select>
+            <select id="color">
+                <option value="mixed">Mixed</option>
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="orange">Orange</option>
+            </select>
+            <select id="sort-price">
+                <option value="low-high">Price: Low to High</option>
+                <option value="high-low">Price: High to Low</option>
+            </select>
+        </div>
+
+        <!-- Example product display -->
+        <div class="product">
+            <img src="flower1.jpg" alt="SUGER RUSH">
+            <h3>Sugar Rush</h3>
+            <p>$54</p>
+            <button onclick="addToBasket()">Add to Basket</button>
+        </div>
+        <div class="product">
+            <img src="flower1.jpg" alt="LEMONADE">
+            <h3>LEMONADE</h3>
+            <p>$54</p>
+            <button onclick="addToBasket()">Add to Basket</button>
+        </div>
+        <div class="product">
+            <img src="flower1.jpg" alt="THE ANGELS">
+            <h3>THE ANGELS</h3>
+            <p>$54</p>
+            <button onclick="addToBasket()">Add to Basket</button>
+        </div>
+        <div class="product">
+            <img src="flower1.jpg" alt="UNBREAKABLE">
+            <h3>UNBREAKABLE</h3>
+            <p>$59</p>
+            <button onclick="addToBasket()">Add to Basket</button>
+        </div>
+        <div class="product">
+            <img src="flower1.jpg" alt="SIERRA SUNSET">
+            <h3>SIERRA SUNSET</h3>
+            <p>$59</p>
+            <button onclick="addToBasket()">Add to Basket</button>
+        </div>
+        <div class="product">
+            <img src="flower1.jpg" alt="CASABLANCE">
+            <h3>CASABLANCE</h3>
+            <p>$59</p>
+            <button onclick="addToBasket()">Add to Basket</button>
+        </div>
+        
+        <!-- Add more products as needed -->
+    </div>
+
+    <footer>
+        <p>© 2024 Floral Project. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToBasket() {
+            var basketCount = document.getElementById('basket-count');
+            basketCount.textContent = parseInt(basketCount.textContent) + 1;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
+    <style>
+        /* Add your CSS here */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Basket</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Delivery Date</th>
+                <th>Purchase Option</th>
+            </tr>
+        </thead>
+        <tbody id="basket-items">
+            <!-- Items will be added here dynamically -->
+        </tbody>
+    </table>
+    <script>
+        function loadBasketItems() {
+            const basket = JSON.parse(localStorage.getItem('basket')) || [];
+            const basketItemsContainer = document.getElementById('basket-items');
+            basketItemsContainer.innerHTML = '';  // Clear existing items
+
+            basket.forEach(item => {
+                const row = `<tr>
+                    <td>${item.productName}</td>
+                    <td>${item.deliveryDate}</td>
+                    <td>${item.purchaseOption}</td>
+                </tr>`;
+                basketItemsContainer.innerHTML += row;
+            });
+        }
+
+        window.onload = loadBasketItems;  // Load items when the page is loaded
+    </script>
+</body>
+</html>
